@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Signup Page{% endblock %}
+{% block content %}
+<div class="pt-4">
+  <div class="col-lg-5 shadow mx-auto p-0">
+    <div class="alert alert-success">
+      <h2 style="color: #17a2b8;">Create Account</h2>
+    </div>
+    <div class="p-4">
+      <form method="POST">
+        {% csrf_token %}
+        <label style="color: #17a2b8; font-weight: bold;">Email</label>
+        <input type="text" name="em" placeholder="enter email" class="form-control" required>
+	<hr>
+        <input type="submit" value="Create Account" class="btn btn-info">
+      </form>
+	<br>
+	<center>
+	<h2 style="color: lime; font-size: 20px; font-weight: bold;">For password check ur mail</h2>
+	</center>
+      <p style="color: red;">{{ msg }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
